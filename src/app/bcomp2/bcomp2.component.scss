@@ -1,0 +1,396 @@
+@use '@angular/material' as mat;
+
+@import '@angular/material/theming';
+@import '../../assets/styles/fti-palette.scss';
+
+$hover: mat.define-palette($fti-light-blue, 300);
+$select: mat.define-palette($fti-light-blue, 500);
+$opengroup: mat.define-palette($fti-dark-blue, 800);
+$groupborder: mat.define-palette($fti-dark-blue, 700);
+$treedefault: mat.define-palette($fti-dark-blue, 600);
+$background: mat.define-palette($fti-dark-blue, 900);
+$group-hover: mat.define-palette($fti-mono, 700);
+
+@media screen and (max-width: 959px) {
+    .default-actions-container {
+        display: none;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .mobile-actions-container {
+        display: none;
+    }
+
+    .dropdown {
+        margin-bottom: 4px;
+    }
+}
+
+* {
+    color: white;
+}
+
+::ng-deep .mat-form-field-infix {
+    padding: 0;
+    border-top: 0;
+}
+
+.mat-card-title {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding-bottom: 10px;
+    color:rgba(255,255,255,1);
+}
+
+.input {
+    background-color: mat.get-color-from-palette($select);
+    height: 32px  ;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.mat-card-black {  
+    margin-left: 20px;
+    padding: 30px;
+    background-color: mat.get-color-from-palette($background);
+    border-bottom-width: 30px;
+    border-bottom-style: solid;
+    border-color: #202846;
+    box-shadow: none;
+    overflow: auto;
+}
+
+.full-width-input {
+    width: calc(100% - 12px); // Required to account for the default borders and left padding of the mat-form-field    
+}
+
+.mat-card-blue {        
+    background-color: mat.get-color-from-palette($background);
+}
+
+.mat-input-element {
+    padding-left: 10px  ;
+}
+
+.functionField {     
+    height: 32px;
+    background-color:mat.get-color-from-palette($opengroup); 
+}
+
+.error-text {
+    color: red;
+    font-weight: bolder;
+}
+
+.fieldHeader {
+    margin-bottom: 8px;       
+}
+
+.detailHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.mat-cell {
+    padding-left: 10px  ;
+}
+
+.dropdown{  
+    background-color: mat.get-color-from-palette($select);                  
+    height: 34px;        
+}
+
+::ng-deep .functionFormField div.mat-form-field-infix {
+    min-height: 32px  ;
+    max-height: 32px  ;
+    height: 32px  ;
+    border-top-width: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
+   }
+
+.mat-form-field {
+    background-color: transparent;
+}
+
+::ng-deep .mat-select-value {
+    margin-left: 10px;    
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding-top: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 4px;    
+}
+
+
+// .blueOption {
+//     background-color: mat.get-color-from-palette($select);
+//     color: white  ;   
+//     width: 140px;
+//     padding-left: 10px;
+// }
+
+.label {
+    color: black;
+    font-size: small;
+    font-weight:500;
+    border-top-width: 0px  ;
+}
+
+.mat-selectblue {
+    background-color: mat.get-color-from-palette($select);       
+    max-width: calc(100%);
+    min-width: 100%;
+    width: calc(100%);  
+    padding-left: 10px;
+}
+
+.optionDropDown {
+    width: 140px;
+    max-width: 140px;
+    height: 32px  ;
+    display: table-cell;
+    vertical-align: middle;
+}
+.title {
+    font-weight:500;    
+}
+
+.xsmall {
+    font-size: xx-small;
+}
+
+.mat-icon-button {  
+    background-color: transparent;   
+}
+
+.lowered {    
+    color: #3773FF;     
+}
+
+.willHighlightOnHover:hover option {
+    background-color: #454F71;
+    border: none;    
+    visibility: visible;
+}
+
+table {
+    color: white;
+    box-shadow: none;
+    border: none;
+    padding: none;
+    text-align: left;
+    background-color: mat.get-color-from-palette($opengroup); 
+}
+
+.option {
+    padding-bottom: 2px;
+}
+
+.mat-row .option p {
+    visibility: hidden;
+    margin: 0px;
+}
+
+.mat-form-field-label-wrapper{
+    width: 140px;
+}
+
+.mat-row:hover .option p {    
+    visibility: visible;  
+}
+
+.addItem {
+    display: flex;
+    width: 300px;
+    line-height: 40px;
+}
+
+.addInputLabel {
+    padding-top: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.paddingLeft {
+    padding-left: 50px;
+    padding-right: 0px;    
+}
+
+.mat-column-ParamType {    
+    width: 140px  ;
+    min-width: 140px  ;
+    max-width: 140px  ;
+    padding-left: 10px  ;
+    padding-right: 30px  ;
+}
+
+.mat-column-Key {
+    width: 210px  ;
+    min-width: 210px  ;
+    max-width: 210px  ;
+    padding-left: 0px  ;
+    padding-right: 40px  ;
+}
+
+.mat-column-OutKey {
+    width: 100%;
+    min-width: 301.75px  ;
+    max-width: 301.75px  ;
+    padding-left: 0px  ;
+    padding-right: 20px  ;
+}
+
+.mat-column-DefaultValue {
+    width: 100% ;    
+    max-width: 100% ;
+    padding-left: 0px ;
+    padding-right: 20px ;
+}
+
+.mat-column-deleteItem{    
+    width: 40px  ;
+    min-width: 40px  ;
+    max-width: 40px  ;
+    padding: 0px  ;
+}
+
+.mat-row .mat-cell, .mat-header-cell {      
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    padding-top: 0px  ;
+    padding-bottom: 0px  ;    
+    margin-top: 0px! important;
+    margin-bottom: 0px  ;
+    height: 32px  ;
+    max-height: 32px  ;
+    min-height: 32px  ;
+}
+
+.blackBackground {
+    background-color: rgba(0,0,0,.7);
+    min-height: 32px;
+    max-height: 32px;       
+}
+
+.subtitle{
+    font-size:medium; 
+    font-weight:500;
+}
+
+::ng-deep .mat-select-panel-wrap {
+    margin-left: 16px;
+}
+
+.mat-dialog-container {
+    height: 100%;
+}
+
+.deleteButton {
+    margin-bottom: 2px;
+    position: relative;
+    right: 4px;
+}
+
+.paddedIcon {
+    padding-bottom: 2px;
+}
+
+.addButton {
+    margin-top: 8px;
+    width: 150px;
+}
+
+.inputBorder {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.inputBorder:focus {
+    border-color: #3773ff;
+}
+
+.functionDesc {
+    margin-bottom: 26px;
+}
+
+.descField {
+    background-color:mat.get-color-from-palette($opengroup); 
+    padding: 10px 0px 10px 10px;
+}
+
+.move-down {
+    padding-top: 10px;
+}
+
+.markdown-area {
+    width: 100% !important;
+    height: 80px;
+    background-color: mat.get-color-from-palette($opengroup);
+    border-color: mat.get-color-from-palette($opengroup);
+}
+
+.functionSidebar {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    width: calc(2.9% + 402px) !important
+}
+
+.functionText {
+    color: lightgray;
+    padding: 30px 30px 15px 30px;
+    height: calc(100% - 95px);
+    overflow-y: scroll;
+    font-size: medium;
+    word-wrap: break-word;
+    scrollbar-color: mat.get-color-from-palette($opengroup);
+}
+
+.functionText ::ng-deep pre {
+    white-space: pre-wrap;
+}
+
+.functionText ::ng-deep h1, .functionText ::ng-deep h2, .functionText ::ng-deep h3, .functionText ::ng-deep h4, .functionText ::ng-deep h5, .functionText ::ng-deep h6 {
+    font-weight: bolder;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.functionText ::ng-deep strong {
+    font-weight: bold;
+}
+
+.closeSidebar {
+    align-self: center;
+}
+
+.confirmButton {
+    width: 150px;
+}
+
+.markdown .h1 {
+    font-weight: bold;
+}
+
+.previewButton {
+    height: 32px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.inputOutputs {
+    padding: 0px !important;
+    margin-top: 20px;
+}

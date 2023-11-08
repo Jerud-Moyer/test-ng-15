@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+
+@import '@angular/material/theming';
+@import '../assets/styles/fti-palette.scss';
+
+$hover: mat.define-palette($fti-light-blue, 300);
+$select: mat.define-palette($fti-light-blue, 500);
+$opengroup: mat.define-palette($fti-dark-blue, 800);
+$groupborder: mat.define-palette($fti-dark-blue, 700);
+$treedefault: mat.define-palette($fti-dark-blue, 600);
+$background: mat.define-palette($fti-dark-blue, 900);
+$group-hover: mat.define-palette($fti-mono, 700);

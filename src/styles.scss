@@ -1,1 +1,544 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
+
+@import '@angular/material/theming';
+@import './assets/styles/fti-palette.scss';
+// @import '../node_modules/@syncfusion/ej2-angular-diagrams/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-angular-inputs/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+// @import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+
+// @import './assets/styles/base/base.scss';
+// @import './assets/styles/buttons/button.scss';
+// @import './assets/styles/buttons/check-box.scss';
+// @import './assets/styles/calendars/calendar.scss';
+// @import './assets/styles/calendars/datepicker.scss';
+// @import './assets/styles/calendars/datetimepicker.scss';
+// @import './assets/styles/dropdowns/drop-down-base.scss';
+// @import './assets/styles/dropdowns/drop-down-list.scss';
+// @import './assets/styles/inputs/input.scss';
+// @import './assets/styles/inputs/numerictextbox.scss';
+// @import './assets/styles/lists/list-view.scss';
+// @import './assets/styles/lists/sortable.scss';
+// @import './assets/styles/popups/popup.scss';
+// @import './assets/styles/popups/spinner.scss';
+
+// Themes
+
+$hover: mat.define-palette($fti-light-blue, 300);
+$select: mat.define-palette($fti-light-blue, 500);
+$opengroup: mat.define-palette($fti-dark-blue, 800);
+$groupborder: mat.define-palette($fti-dark-blue, 700);
+$treedefault: mat.define-palette($fti-dark-blue, 600);
+$background: mat.define-palette($fti-dark-blue, 900);
+$group-hover: mat.define-palette($fti-mono, 700);
+
+
+
+$fti-primary: mat.define-palette($fti-dark-blue, 500);
+$fti-accent: mat.define-palette($fti-light-blue, 500);
+$fti-card: mat.define-palette($fti-mono, 900);
+$fti-theme: mat.define-dark-theme((
+    color: (
+        primary: $fti-accent,
+        accent: $fti-accent
+    )
+));
+
+
+.app-background {
+  background: mat.get-color-from-palette($background);;
+}
+
+@include mat.legacy-core-theme($fti-theme);
+//@include mat.button-theme($fti-theme);
+@include mat.all-legacy-component-themes($fti-theme);
+
+// All
+* {
+  color: rgba(255,255,255,1);
+  letter-spacing: 0.48px;
+  font-weight: 100
+}
+h1 {
+  color: rgb(255,255,255,.60);
+}
+
+//Snackbar
+.black-snackbar {
+  background-color: black;
+  color: white;
+  margin: 0 !important;
+  position: absolute;
+  right: 25px;
+  top: 60px;
+  white-space: pre-wrap;
+}
+
+// Button
+.mat-button-base {
+  text-transform: uppercase;
+  letter-spacing: 0.48px;  
+}
+
+.mat-raised-button, .mat-stroked-button, .mat-flat-button{
+  border-radius: 0px !important;  
+}
+
+.mat-button-base:hover {
+  background-color: mat.get-color-from-palette($fti-accent, 900);
+  color: mat.get-color-from-palette($fti-accent, 900-contrast);
+  
+}
+
+// Card
+.mat-card {
+  background-color: mat.get-color-from-palette($fti-card, 900);
+  color: mat.get-color-from-palette($fti-card, 900-contrast);
+  border-radius: 0px !important;
+  padding: 30px !important;
+}
+
+.mat-card-title {
+  text-transform: uppercase;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 2.88px;
+  opacity: 1;
+  margin-bottom: 0px !important;
+}
+
+.mat-card-subtitle {
+  opacity: 0.9;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 8px !important;
+}
+
+.mat-card-content {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+// Input
+input {
+  height: 36px;
+  padding: 0 10px;
+  background-color: mat.get-color-from-palette($fti-primary, 900);
+  color: mat.get-color-from-palette($fti-primary, 900-contrast);
+  font-weight: 300;
+  border: 1px solid red;
+  border-radius: 3px;  
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid mat.get-color-from-palette($fti-accent, 500);
+}
+
+// Select
+select {
+  height: 38px;
+  padding: 0 10px;
+  background-color: mat.get-color-from-palette($fti-accent, 500);
+  color: mat.get-color-from-palette($fti-accent, 500-contrast);
+  font-weight: 300;
+  border: 1px solid transparent;  
+}
+
+select:hover {
+  background-color: mat.get-color-from-palette($fti-accent, 900);
+  color: mat.get-color-from-palette($fti-accent, 900-contrast);
+}
+
+select:focus {
+  outline: none;
+  border: 1px solid mat.get-color-from-palette($fti-accent, 500);
+}
+
+option {
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.optionDropDown {
+  width: 140px;
+  max-width: 140px;
+  height: 32px  ;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+::ng-deep .functionFormField div.mat-form-field-infix {
+  min-height: 32px  ;
+  max-height: 32px  ;
+  height: 32px  ;
+  border-top-width: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 100%;
+ }
+
+.mat-form-field {
+  background-color: transparent;
+}
+
+::ng-deep .mat-select-value {
+  margin-left: 10px;    
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-top: 2px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 4px;    
+}
+
+.blackBackground {
+  background-color: rgba(0,0,0,.7);
+  min-height: 32px;
+  max-height: 32px;       
+}
+
+.blueOption {
+  background-color: mat.get-color-from-palette($select);
+  color: white; 
+}
+
+mat-select {
+  border-radius: 3px;
+}
+
+.required-field::before {
+  content: "*";
+  color: red;
+}
+
+.input {
+  background-color: mat.get-color-from-palette($select);
+  height: 32px  ;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Icon
+.mat-icon.icon-button {
+  padding: 5px;
+  border-radius: 2px;
+  background-color: mat.get-color-from-palette($fti-accent, 500);
+  color: mat.get-color-from-palette($fti-primary, 500);
+  cursor: pointer;
+}
+
+.mat-icon.icon-button:hover {
+  background-color: white;
+}
+
+// Menu
+.mat-menu-panel {
+  border-radius: 0px !important;
+  background: mat.get-color-from-palette($fti-primary, 800);
+  max-width: none !important;
+}
+
+.mat-menu-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mat-menu-item:hover .mat-icon:hover {
+  background: rgba(0, 0, 0, 0) !important;
+  color: rgba(255, 255, 255, 1);
+}
+
+.mat-menu-button {
+  display: flex;
+  align-items: center;
+}
+
+// Modal
+.mat-dialog-container {
+  padding: 0px !important;
+  border-radius: 0px !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  background-color: transparent;
+}
+
+.modal {
+  background-color: mat.get-color-from-palette($fti-primary, 500);
+}
+
+.modal-close-icon {
+  cursor: pointer;
+}
+
+.run-analysis-modal > mat-dialog-container {
+  background-color: #1C2237 !important;
+}
+
+// Expansion panel
+.mat-expansion-panel {
+  border-radius: 0px !important;
+  background-color: mat.get-color-from-palette($fti-primary, 800);
+  color: mat.get-color-from-palette($fti-primary, 800-contrast);
+}
+
+// Stepper
+.mat-stepper-horizontal, .mat-stepper-vertical {
+  background-color: mat.get-color-from-palette($fti-primary, 800);
+}
+
+.mat-step-header:hover, .mat-step-header:focus {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+// Date picker
+.date-picker {
+  background-color: mat.get-color-from-palette($fti-accent, 500);
+  color: mat.get-color-from-palette($fti-accent, 500-contrast);
+  font-family : Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+// Paginator
+.mat-paginator {
+  background-color: mat.get-color-from-palette($fti-primary, 800);
+}
+
+// Button toggle
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+  border-style: none;
+}
+
+.mat-button-toggle-appearance-standard {
+  background-color: mat.get-color-from-palette($fti-accent, 500);
+  color: mat.get-color-from-palette($fti-accent, 500-contrast);
+  font-weight: 500;
+}
+
+.mat-button-toggle-checked {
+  background-color: mat.get-color-from-palette($fti-accent, 900);
+  color: mat.get-color-from-palette($fti-accent, 900-contrast);
+}
+
+// Table
+.mat-table {
+  background-color: mat.get-color-from-palette($fti-primary, 800);
+}
+.mat-row:hover {
+  background-color: mat.get-color-from-palette($fti-dark-blue, 400);
+}
+.mat-row .demo-option p {
+  visibility: hidden;
+}
+.mat-row:hover .demo-option p {    
+  visibility: visible;  
+}
+.demo-option {
+  display:inline-block;
+}
+.mat-icon {
+  transform: scale(.80);  
+}
+
+// Tree
+.mat-tree {
+  background-color: mat.get-color-from-palette($fti-primary, 800);
+}
+.mat-tree .mat-nested-tree-node div[role=group]{
+ padding-left: 40px;
+}
+
+.mat-tree-node > .mat-button-base:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+.mat-tree-node:hover {
+  background-color: mat.get-color-from-palette($fti-dark-blue, 400);
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-size: cover;
+  // overflow: auto;
+  font-family: roboto;
+}
+
+body {
+  margin: 0;
+  height: 100%;    
+}
+
+.background-primary {
+  background-color: mat.get-color-from-palette($fti-primary, 500);
+}
+
+.link-accent {
+  text-decoration: none;
+  color: mat.get-color-from-palette($fti-accent, 500);
+  cursor: pointer;
+}
+
+.e-contextmenu-wrapper ul li {
+  background-color: #1C2237 !important;
+  color: #ffffff !important;
+}
+.center-text {
+  text-align: center;
+}
+
+
+$offset: 1px;
+.search-dropdown {
+  position: relative;
+  user-select: none;
+  font-size: 0.875rem;
+  $self: &;
+  #{$self}__btn {
+    position: relative;
+    background: black;
+    height: 38px - $offset;
+    line-height: 38px - $offset;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #999;
+    }
+    span{
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 20%;
+    }
+  }
+  #{$self}__dropdown {
+    position: absolute;
+    top: 20%;
+    left: 0px;
+    // width: 100%;
+    width:20%;
+    padding: 0px 0px;
+    background: white;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    z-index: 9999;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 6px 12px rgba(black, 0.1);
+    &__search {
+      width: 20%;
+      padding: 5px 10px;
+      line-height: 20px;
+      background: #f9f9f9;
+      border: 0px;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+      outline: none;
+    }
+    &__scroller {
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    &__item {
+      position: relative;
+      height: 40px;
+      line-height: 40px;
+      padding: 0px 20px;
+      padding-left: 50px;
+      text-transform: capitalize;
+      border-bottom: 1px solid #e5e5e5;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:last-child {
+        border-bottom: 0px;
+      }
+      &:hover {
+        background: #f9f9f9;
+        cursor: pointer;
+      }
+      &__img {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        display: block;
+        background-color: #ccc;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30px;
+        width: 30px;
+        border-radius: 3px;
+      }
+    }
+    &__msg {
+      padding: 5px 10px;
+      text-align: center;
+    }
+  }
+  &.open {
+    #{$self}__btn {
+      &:before {
+        border-top: 0px;
+        border-bottom: 5px solid #999;
+      }
+    }
+    #{$self}__dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &.small {
+    #{$self}__btn {
+      height: 32px - $offset;
+      line-height: 32px - $offset;
+    }
+  }
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

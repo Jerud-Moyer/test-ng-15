@@ -1,0 +1,21 @@
+<breadcrumb #parent class="breadcrumb-box">
+  <div class="breadcrumb-box-inner">
+    <span 
+      class="breadcrumb cursor-effect" 
+      *ngIf="parent.breadcrumbs?.length;"
+    >
+      <div fxLayout="row">
+          <a (click)="navigate(getLastUrl())">
+            <span class="mat-body-2">{{ getLastCrumb() }}</span></a>
+          <span class="mat-body-2 crumb-divider" [style.font-size]="'24px'">/</span>
+      </div>
+    </span>
+    <span class="breadcrumb cursor-effect" *ngFor="let route of parent.breadcrumbs; let i = index">
+        <div *ngIf="parent.breadcrumbs && i < parent.breadcrumbs.length - 1" fxLayout="row">
+            <a (click)="navigate(route.url)"><span class="mat-body-2">{{ route.displayName }}</span></a>
+            <span class="mat-body-2 crumb-divider" [style.font-size]="'24px'">/</span>
+        </div>
+        <a *ngIf="i === parent.breadcrumbs.length - 1"><span class="mat-body-2">{{ route.displayName }}</span></a>
+    </span>
+  </div>
+</breadcrumb>

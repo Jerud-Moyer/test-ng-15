@@ -1,0 +1,30 @@
+
+
+<table mat-table>
+  <button style="color: #000" (click)="goToNiece()">
+    niece
+  </button>
+  <mat-card-title class="subtitle">INPUT PARAMETERS</mat-card-title>
+  <td mat-cell>
+    <ng-container matColumnDef="ParamType">
+      <mat-form-field class="dataTypeOptions functionFormField">
+        <mat-select class="blackBackground optionDropDown input">
+          <mat-option value="string" class="blueOption">STRING??</mat-option>
+          <mat-option value="boolean" class="blueOption">BOOLEAN</mat-option>
+          <mat-option value="minioDir" class="blueOption">MINIO DIRECTORY</mat-option>
+          <mat-option value="minioFile" class="blueOption">MINIO FILE</mat-option>
+          <mat-option value="number" class="blueOption">NUMBER</mat-option>
+          <mat-option value="object" class="blueOption">OBJECT</mat-option>
+        </mat-select> 
+      </mat-form-field>
+    </ng-container>
+  </td>
+</table>
+<mat-select class="blackBackground optionDropDown input">
+  <mat-option value="string" class="blueOption">STRING</mat-option>
+  <mat-option value="boolean" class="blueOption">BOOLEAN</mat-option>
+  <mat-option value="minioDir" class="blueOption">MINIO DIRECTORY</mat-option>
+  <mat-option value="minioFile" class="blueOption">MINIO FILE</mat-option>
+  <mat-option value="number" class="blueOption">NUMBER</mat-option>
+  <mat-option value="object" class="blueOption">OBJECT</mat-option>
+</mat-select> 

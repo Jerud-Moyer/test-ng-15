@@ -1,0 +1,23 @@
+.breadcrumb-box {
+  display: block;
+  float: right;
+  padding: 0 15px;
+}
+
+.breadcrumb-box-inner {
+  display: flex;
+  flex-direction: row;
+}
+
+.breadcrumb > div {
+  display: flex;
+  max-width: fit-content;
+}
+
+.breadcrumb a {
+  cursor: pointer;
+}
+
+.crumb-divider {
+  margin: 0 6px;
+}
