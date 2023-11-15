@@ -51,7 +51,7 @@ $treedefault: mat.define-palette($fti-dark-blue, 600);
 $background: mat.define-palette($fti-dark-blue, 900);
 $group-hover: mat.define-palette($fti-mono, 700);
 
-
+$inactive:#bfbfbf;
 
 $fti-primary: mat.define-palette($fti-dark-blue, 500);
 $fti-accent: mat.define-palette($fti-light-blue, 500);
@@ -65,7 +65,12 @@ $fti-theme: mat.define-dark-theme((
 
 
 .app-background {
-  background: mat.get-color-from-palette($background);;
+  background: #1c2237;
+  background-image: url('/assets/img/mobileDefense.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @include mat.legacy-core-theme($fti-theme);
@@ -342,14 +347,23 @@ mat-select {
 }
 
 .mat-button-toggle-appearance-standard {
-  background-color: mat.get-color-from-palette($fti-accent, 500);
-  color: mat.get-color-from-palette($fti-accent, 500-contrast);
+  background-color: $inactive;
   font-weight: 500;
+}
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  color: #000;
 }
 
 .mat-button-toggle-checked {
-  background-color: mat.get-color-from-palette($fti-accent, 900);
+  background-color: mat.get-color-from-palette($fti-accent, 500);
+}
+
+.mat-button-toggle-checked .mat-button-toggle-label-content {
   color: mat.get-color-from-palette($fti-accent, 900-contrast);
+}
+
+.toggle-group-label {
+  margin: 4px 8px;
 }
 
 // Table
@@ -542,3 +556,33 @@ $offset: 1px;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* trying some scrollbar stuff */
+* {
+  // scrollbar-width: thin;
+  // scrollbar-color: transparent #fff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  // margin-left: 4px
+  // margin: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .3);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-corner {
+  // background: #000;
+  background: rgba(0, 0, 0, .3);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #686868;
+  border-radius: 14px;
+}

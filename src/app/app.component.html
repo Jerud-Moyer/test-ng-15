@@ -303,9 +303,10 @@
 </style>
 
 <!-- Toolbar -->
-<div class='app-background'>
-  <div style="margin-top: 100px;">
+<div class='app-background' [style.background-image]="backgroundImageFile">
+  <div style="padding-top: 100px;">
     <h1>hello?</h1>
+    
   </div>
   <app-breadcrumb></app-breadcrumb>
   <router-outlet></router-outlet>

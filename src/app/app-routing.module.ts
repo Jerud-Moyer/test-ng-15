@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Acomp1Component } from './acomp1/acomp1.component';
 import { Bcomp1Component } from './bcomp1/bcomp1.component';
+import { TestScrollbersComponent } from './test-scrollbers/test-scrollbers.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'second-cousin-comp',
     loadChildren: () => import("./mod-a/mod-a.module").then(m => m.ModAModule),
+  },
+  {
+    path: 'test-scrollbars',
+    component: TestScrollbersComponent,
+    data: { breadcrumb: 'Scrollber Derp' }
   }
 ];
 

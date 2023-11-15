@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-ng-15';
+
+  backgroundImageFile = '/assets/img/space.png'
 }

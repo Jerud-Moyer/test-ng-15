@@ -10,3 +10,9 @@ $groupborder: mat.define-palette($fti-dark-blue, 700);
 $treedefault: mat.define-palette($fti-dark-blue, 600);
 $background: mat.define-palette($fti-dark-blue, 900);
 $group-hover: mat.define-palette($fti-mono, 700);
+
+
+.app-background {
+  min-height: 100vh;
+  // border: solid red 1px;
+}

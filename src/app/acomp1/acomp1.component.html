@@ -5,4 +5,26 @@
   <button style="color: #000" (click)="goToChild()">
     child
   </button>
+  <button style="color: #000" (click)="goToScrollbars()">
+    scrollbars
+  </button>
+</div>
+<div class="container">
+  <div class="function-window">
+    <!-- <app-analysis-buttons /> -->
+    <mat-card class="content-card left-card">
+      <label class="toggle-group-label" for="analysis_buttons">LOG FILTER</label>
+      <div class="filterField" name="analysis_buttons">
+        <mat-button-toggle class="filterCodes">Errors</mat-button-toggle>
+        <mat-button-toggle class="filterCodes">Successes</mat-button-toggle>
+        <mat-button-toggle class="filterCodes">Updates</mat-button-toggle>
+      </div>
+    </mat-card>
+
+    <div class="resizer" id="resizebar"></div>
+
+    <div class="content-card right-card">
+      <h3>here be some content</h3>
+    </div>
+  </div>
 </div>
